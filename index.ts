@@ -1,6 +1,6 @@
 export const SINGLE_PRICE = 8;
 
-export type Book = 1 | 2 | 3 |4 | 5;
+export type Book = 1 | 2 | 3 | 4 | 5;
 
 export const UNIQUE_BOOKS_DISCOUNT = new Map<number, number>([
     [1, 0],
@@ -34,9 +34,9 @@ export function getPrice(books: Array<Book>): number
         const collection = collections.find(c => !c.has(b));
         if (collection === undefined)
         {
-            const uniqueExamparies = new Set<Book>()
-            uniqueExamparies.add(b);
-            collections.push(uniqueExamparies);
+            const uniqueBooks = new Set<Book>();
+            uniqueBooks.add(b);
+            collections.push(uniqueBooks);
         } 
         else 
         {
