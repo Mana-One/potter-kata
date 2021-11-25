@@ -29,12 +29,7 @@ class PricingError extends MyError {
 
 export function getPrice(books: Array<Book>): number 
 {
-    // if (books.length === 0)
-    // {
-    //     return 0;
-    // }
     const collections = Array<Set<Book>>();
-
     books.forEach(b => {
         const collection = collections.find(c => !c.has(b));
         if (collection === undefined)
@@ -42,7 +37,8 @@ export function getPrice(books: Array<Book>): number
             const uniqueExamparies = new Set<Book>()
             uniqueExamparies.add(b);
             collections.push(uniqueExamparies);
-        } else 
+        } 
+        else 
         {
             collection.add(b);
         }
